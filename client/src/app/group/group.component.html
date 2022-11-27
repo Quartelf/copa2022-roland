@@ -1,0 +1,46 @@
+<h1>Digite os vencedores de cada grupo</h1>
+<h2>Competição entre alunos</h2>
+<h3>Organizadora: Thaisa</h3>
+<h5>Ex: 1 - Brasil, 2 - Suiça, 3 - Camarões</h5>
+  <input type="text" class="input" placeholder="Grupo A" [(ngModel)]="grupoa">
+  <h4>Grupo A: Qatar, Equador, Senegal e Holanda</h4> 
+  <input type="text" class="input" placeholder="Grupo B" [(ngModel)]="grupob">
+  <h4>Grupo B: Inglaterra, Irã, Estados Unidos e País de Gales</h4>
+  <input type="text" class="input" placeholder="Grupo C" [(ngModel)]="grupoc"> 
+  <h4>Grupo C: Argentina, Arábia Saudita, México e Polônia</h4>
+  <input type="text" class="input" placeholder="Grupo D" [(ngModel)]="grupod"> 
+  <h4>Grupo D: França, Austrália, Dinamarca e Tunísia</h4> 
+  <input type="text" class="input" placeholder="Grupo E" [(ngModel)]="grupoe"> 
+  <h4>Grupo E: Alemanha, Costa Rica, Espanha e Japão</h4>
+  <input type="text" class="input" placeholder="Grupo F" [(ngModel)]="grupof"> 
+  <h4>Grupo F: Bélgica, Canadá, Marrocos e Croácia</h4>
+  <input type="text" class="input" placeholder="Grupo G" [(ngModel)]="grupog"> 
+  <h4>Grupo G: Brasil, Sérvia, Suíça e Camarões</h4> 
+  <input type="text" class="input" placeholder="Grupo H" [(ngModel)]="grupoh">   
+  <h4>Grupo H: Portugal, Gana, Uruguai e Coreia do Sul</h4> 
+  <p></p>
+  <h2>Para confirmar sua resposta digite sua matricula</h2>
+  <p></p>
+  <button class="log" mat-raised-button color="primary"  (click)="add()">Enviar</button>
+  <p></p>
+  <h2></h2>
+  <button class="log" mat-raised-button color="primary"  (click)="get()" >Ver os resultados</button>
+  <p></p>
+  <table>
+  <tr *ngFor="let result of results">
+      <td><h1>Grupo A = {{result.grupoa}}</h1></td>
+      <td><h1>Grupo b = {{result.grupob}}</h1></td>
+    </tr>
+  </table>
+
+<!--
+  Então thomas sóbrio, o plano é o seguinte quando o cara
+quiser mudar ou adicionar mais um(um post basicamente kkkkkkk)
+o cara vai pegar os results da tal matricula usando um findAll(where = matricula)
+dai ele da um Destroy neste results mas isso no banco de dados o
+ou pensando agora voce pode desativar com um status 0 pq o cara pode ver
+as apostas anteriores o eu acho mais legal pra galera se morder kkkkkkk
+e isso tudo porque eu nao sei tratar as informações~;0
+ou criar uma forma de conseguir enviar e receber as informacoes 
+de forma que posso pegar essa informacao limpa
+ -->
