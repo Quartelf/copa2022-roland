@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
 
   public async registro(){
     const dialog = this.dialog.open(CadastroComponent, {
-      width : '550px'
+      width : 'auto'
     })
     
   } 
