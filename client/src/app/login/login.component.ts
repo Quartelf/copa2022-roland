@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { CadastroComponent } from '../cadastro/cadastro.component';
+import { URLUtils } from 'src/services/URLUtils';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   public login(){
-    this.HttpClient.post('http://10.0.0.133:3000/logon', {matricula : this.matricula, password : this.password}).toPromise().then((response : any)=> {
+    this.HttpClient.post(URLUtils.getUrl() + '/logon', {matricula : this.matricula, password : this.password}).toPromise().then((response : any)=> {
     console.log(response);
       if(response.token){
         this.isLogin = true;

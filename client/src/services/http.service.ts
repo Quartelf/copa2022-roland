@@ -1,12 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { URLUtils } from './URLUtils';
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService{
-
-  private readonly baseUrl = 'http://10.0.0.133:3000/'
 
   constructor(private httpClient : HttpClient) {
   
@@ -26,20 +24,20 @@ export class HttpService{
     }
 
   public get(route : string) : Promise<any>{
-    return this.httpClient.get(this.baseUrl + route, this.makeHttpOptions()).toPromise();
+    return this.httpClient.get(URLUtils.getUrl() + route, this.makeHttpOptions()).toPromise();
   }
 
   public post(route : string, obj : any) : Promise<any>{
-    return this.httpClient.post(this.baseUrl + route, obj, this.makeHttpOptions()).toPromise();
+    return this.httpClient.post(URLUtils.getUrl() + route, obj, this.makeHttpOptions()).toPromise();
   }
 
 
   public patch(route : string, obj : any) : Promise<any>{
-    return this.httpClient.patch(this.baseUrl + route, obj, this.makeHttpOptions()).toPromise();
+    return this.httpClient.patch(URLUtils.getUrl() + route, obj, this.makeHttpOptions()).toPromise();
   }  
 
   public put(route : string, obj : any) : Promise<any>{
-    return this.httpClient.put(this.baseUrl + route, obj, this.makeHttpOptions()).toPromise();
+    return this.httpClient.put(URLUtils.getUrl() + route, obj, this.makeHttpOptions()).toPromise();
   }  
 
 }
